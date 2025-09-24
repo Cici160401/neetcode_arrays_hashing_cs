@@ -32,7 +32,7 @@ dotnet run --project Runner
 dotnet run --project Runner -- TwoSum
 
 ## ----Estructura del repositorio----
-
+```bash
 NeetcodeArraysHashing.sln          ← **Solución** (índice que agrupa proyectos)
 
 ├── Neetcode.ArraysHashing/        ← **Proyecto 1 – Class Library**
@@ -53,6 +53,7 @@ NeetcodeArraysHashing.sln          ← **Solución** (índice que agrupa proyect
     └── Program.cs                 ↳ `using Neetcode.ArraysHashing.Solutions`
                                      Imprime/depura resultados
 
+---
 
 ### Glosario
 
