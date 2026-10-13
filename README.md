@@ -111,7 +111,7 @@ Para proponer una contribución:
 
 Todavía no se han incorporado una guía de contribución independiente ni una licencia open source. La elección de la licencia forma parte de la evolución prevista.
 
-## Hoja de ruta
+## Roadmap
 
 - Ampliar las pruebas de los ejercicios actuales, incluyendo casos límite, y sustituir la prueba vacía por cobertura útil.
 - Revisar la corrección de los algoritmos y documentar su complejidad temporal y espacial.
