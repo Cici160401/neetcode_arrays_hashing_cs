@@ -1,4 +1,4 @@
-public class GroupAnagrams {
+public class GroupAnagramsSolution {
     public List<List<string>> GroupAnagrams(string[] strs) {
         var grupos = new Dictionary<string, List<string>>();
 

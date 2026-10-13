@@ -1,76 +1,67 @@
-# Neetcode Arrays & Hashing 🚀
+# Neetcode Exercises
 
-Colección de soluciones en **C# (.NET 8)** para todos los problemas del módulo **Arrays & Hashing** de [NeetCode](https://neetcode.io/).
-
-![build](https://github.com/<usuario>/<repo>/actions/workflows/dotnet.yml/badge.svg)
-
----
+Colección de ejercicios de algoritmos y estructuras de datos de NeetCode en C# sobre .NET 9. Actualmente incluye Contains Duplicate, Two Sum, Group Anagrams y Valid Palindrome.
 
 ## Requisitos
-- [.NET SDK 8.0 o superior](https://dotnet.microsoft.com/)
-- VS Code + extensión **C#** (o cualquier IDE .NET)
 
----
+- .NET SDK 9.0 o una versión posterior compatible con `net9.0`.
+- Runtime .NET 9.0 para ejecutar los tests y el Runner.
+- Acceso a NuGet para restaurar los paquetes de pruebas.
+- Opcional: Visual Studio Code con soporte para C# o cualquier IDE .NET.
+
+## Estructura
+
+```text
+/
+├── src/
+│   └── Neetcode.ArraysHashing/
+│       ├── Neetcode.ArraysHashing.csproj
+│       ├── ArraysHashing/
+│       │   ├── Contains_Duplicate.cs
+│       │   ├── Group_Anagrams.cs
+│       │   └── TwoSum.cs
+│       └── TwoPointers/
+│           └── Valid_Palindrome.cs
+├── tests/
+│   └── Neetcode.ArraysHashing.Tests/
+│       ├── Neetcode.ArraysHashing.Tests.csproj
+│       ├── ArraysHashing/
+│       │   └── ContainsDuplicateTests.cs
+│       └── UnitTest1.cs
+├── Runner/
+│   ├── Runner.csproj
+│   └── Program.cs
+├── .gitignore
+├── README.md
+└── NeetcodeArraysHashing.sln
+```
+
+La solución incluye los tres proyectos. Tanto Runner como el proyecto xUnit referencian la biblioteca mediante `ProjectReference`. Se conservan los nombres de proyectos, assemblies y namespaces existentes; las carpetas agrupan los ejercicios por categoría.
+
+## Compilar y probar
+
+Desde la raíz del repositorio:
+
+```bash
+dotnet restore
+dotnet build
+dotnet test
+```
+
+Las pruebas actuales contienen tres casos de Contains Duplicate y un test vacío de la plantilla (`UnitTest1`). No cubren todavía todos los algoritmos.
+
+## Ejecutar el Runner
+
+```bash
+dotnet run --project Runner/Runner.csproj
+```
+
+Actualmente imprime `Hello, World!`. Para ejecutar un ejercicio manualmente, añade su llamada en `Runner/Program.cs`.
 
 ## Añadir un ejercicio
 
-1. Crear `Solutions/<Id>_<Nombre>.cs` dentro del proyecto **Neetcode.ArraysHashing**.  
-2. Crear su prueba en `Tests/<Nombre>Tests.cs`.  
-3. Ejecutar:
+1. Añade la solución en la categoría correspondiente dentro de `src/Neetcode.ArraysHashing/`.
+2. Añade sus pruebas en la misma categoría dentro de `tests/Neetcode.ArraysHashing.Tests/`.
+3. Ejecuta `dotnet build` y `dotnet test` antes de proponer cambios.
 
-   ```bash
-   dotnet test           # todos los tests deben quedar en verde
-
-## Ejecutar manualmente
-
-El proyecto Runner es opcional, pero muy útil para depurar o ver la salida “a mano”.
-
-# Ejecutar el runner con el ejemplo que tengas en Program.cs
-dotnet run --project Runner
-
-# (Opcional) Si tu Program.cs admite argumentos, por ejemplo:
-dotnet run --project Runner -- TwoSum
-
-## ----Estructura del repositorio----
-```bash
-NeetcodeArraysHashing.sln          ← **Solución** (índice que agrupa proyectos)
-
-├── Neetcode.ArraysHashing/        ← **Proyecto 1 – Class Library**
-│   ├── Neetcode.ArraysHashing.csproj
-│   └── Solutions/                 ← aquí va **cada ejercicio**
-│       ├── ContainsDuplicate.cs
-│       ├── TwoSum.cs
-│       └── …
-│              ↳ Compila a *Neetcode.ArraysHashing.dll*
-│
-├── Neetcode.ArraysHashing.Tests/  ← **Proyecto 2 – xUnit Tests**
-│   ├── Neetcode.ArraysHashing.Tests.csproj
-│   └── ContainsDuplicateTests.cs
-│              ↳ Referencia la DLL anterior para probarla
-│
-└── Runner/                        ← **Proyecto 3 – Console App** (opcional)
-    ├── Runner.csproj
-    └── Program.cs                 ↳ `using Neetcode.ArraysHashing.Solutions`
-                                     Imprime/depura resultados
-
----
-
-### Glosario
-
-Solución (.sln)	Índice que agrupa proyectos y sus relaciones.
-Proyecto (.csproj)	Unidad de compilación. Puede generar DLL (Library) o EXE (Console/App).
-Class Library	Proyecto sin Main(). Contiene la lógica reutilizable; se compila a DLL.
-Console App	Proyecto con Main(). Se ejecuta con dotnet run.
-DLL	Binario resultante de una Class Library; otros proyectos lo cargan.
-ProjectReference	Entrada en un .csproj que indica “este proyecto depende de aquel otro”.
-
-
-## Workflow típico:
-
-Añade un archivo en Solutions/ con la nueva función.
-
-Añade su prueba en Tests/.
-
-Ejecuta dotnet test → todo verde.
-
-(Opc.) Lanza dotnet run --project Runner para ver resultados manualmente.
+Crea categorías adicionales cuando tengan ejercicios. La licencia, la guía de contribución y las configuraciones de GitHub quedan para una etapa posterior.

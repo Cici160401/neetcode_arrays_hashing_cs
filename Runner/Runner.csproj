@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\Neetcode.ArraysHashing\Neetcode.ArraysHashing.csproj" />
+    <ProjectReference Include="..\src\Neetcode.ArraysHashing\Neetcode.ArraysHashing.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
